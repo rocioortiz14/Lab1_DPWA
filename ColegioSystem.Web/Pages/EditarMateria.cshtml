@@ -1,0 +1,42 @@
+﻿@page
+@model ColegioSystem.Web.Pages.EditarMateriaModel
+@{
+}
+<jumbotrom>
+    <h1>
+       Edición  de Materias
+    </h1>
+</jumbotrom>
+<form method="post">
+    <input type="hidden" asp-for="Materias.Id" />
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Materias.Codigo"></label>
+        <input type="text" class="form-control" asp-for="Materias.Codigo" placeholder="Ingrese Nombre del Docente">
+        <span class="text-danger" asp-validation-for="Materias.Codigo"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Materias.NombreMateria"></label>
+        <input type="text" class="form-control" asp-for="Materias.NombreMateria" placeholder="Ingrese Nombre del Docente">
+        <span class="text-danger" asp-validation-for="Materias.NombreMateria"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Materias.HorasSemanales"></label>
+        <input type="text" class="form-control" asp-for="Materias.HorasSemanales" placeholder="Ingrese Nombre del Docente">
+        <span class="text-danger" asp-validation-for="Materias.HorasSemanales"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Materias.DocenteImparte"></label>
+        <input type="text" class="form-control" asp-for="Materias.DocenteImparte" placeholder="Ingrese Nombre del Docente">
+        <span class="text-danger" asp-validation-for="Materias.DocenteImparte"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Materias.Activa"></label>
+        <input type="text" class="form-control" asp-for="Materias.Activa">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-sm btn-primary">Guardar</button>   <a class="btn btn-sm btn-danger" asp-area="" asp-page="/Materias">Cancelar</a>
+    </div>
+
+</form>

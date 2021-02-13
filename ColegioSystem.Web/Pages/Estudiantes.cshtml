@@ -1,0 +1,51 @@
+﻿@page
+@model ColegioSystem.Web.Pages.EstudiantesModel
+@{
+}
+<h1 class="text-lg-center">Nomina Estudiantes</h1>
+<th>
+    <a class="btn btn-sm btn-success" asp-page="/CrearEstudiantes">Ingresar Estudiantes</a>
+</th>
+<br />
+<br />
+
+<table  class="table table-dark">
+
+    <thead>
+        <tr>
+
+            <th> Id </th>
+            <th>NIE</th>
+            <th>Nombre</th>
+            <th> Estado </th>
+            <th class="text-center">Opciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Estudiantes)
+        {
+            <tr>
+                <td> @item.Id</td>
+                <td> @item.NIE</td>
+                <td> @item.Nombre</td>
+                <td>
+                    @if (item.Activo)
+                    {
+                        <p>Si</p>
+                    }
+                    else
+                    {
+                        <p>No</p>
+                    }
+                </td>
+
+                <td class="text-center">
+                    <a class="btn btn-sm btn-warning" asp-area="" asp-page="/EditarEstudiantes" asp-route-id="@item.Id">Editar</a>
+
+                    <a class="btn btn-sm btn-danger" asp-area="" asp-page="/EliminarEstudiantes" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

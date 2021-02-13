@@ -1,0 +1,45 @@
+﻿@page
+@model ColegioSystem.Web.Pages.EliminarDocentesModel
+@{
+}
+<jumbotrom>
+    <h1>
+        Eliminar Registro
+    </h1>
+</jumbotrom>
+<form method="post">
+    <input type="hidden" asp-for="Docentes.Id" />
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Docentes.Nombre"></label>
+        <input type="text" class="form-control" asp-for="Docentes.Nombre" placeholder="Ingrese Nombre del Docente">
+        <span class="text-danger" asp-validation-for="Docentes.Nombre"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Docentes.NIP"></label>
+        <input type="text" class="form-control" asp-for="Docentes.NIP" placeholder="Ingrese # de escalafon">
+        <span class="text-danger" asp-validation-for="Docentes.NIP"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Docentes.Nivel"></label>
+        <input type="text" class="form-control" asp-for="Docentes.Nivel" placeholder="Ingrese nivel profesional">
+        <span class="text-danger" asp-validation-for="Docentes.Nivel"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Docentes.Activo"></label>
+        <input type="text" class="form-control" asp-for="Docentes.Activo">
+    </div>
+    <jumbotrom>
+        <h3>
+            Esta seguro de eliminar este registro
+        </h3>
+    </jumbotrom>
+    <div>
+        <a class="btn btn-sm btn-warning" asp-area="" asp-page="/Docentes">Cancelar</a>
+        <button type="submit" class="btn btn-danger">Eliminar</button><br />
+    </div>
+
+</form>
