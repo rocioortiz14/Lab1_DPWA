@@ -1,0 +1,53 @@
+﻿@page
+@model ColegioSystem.Web.Pages.MateriasModel
+@{
+}
+<h1 class="text-lg-center">Materias</h1>
+<td>
+    <a class="btn btn-sm btn-success" asp-page="/CrearMaterias">Ingresar Materia</a>
+</td>
+<br />
+<br />
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th>Codigo</th>
+            <th>Nombre Materia</th>
+            <th>Horas Semanales</th>
+            <th>Docente a Cargo</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Materias)
+        {
+        <tr>
+            <td> @item.Id</td>
+            <td> @item.Codigo</td>
+            <td> @item.NombreMateria</td>
+            <td> @item.HorasSemanales</td>
+            <td> @item.DocenteImparte</td>
+            <td>
+                @if (item.Activa)
+                {
+                    <p>Si</p>
+                }
+                else
+                {
+                    <p>No</p>
+                }
+            </td>
+            
+            <td>
+                <a class="btn btn-sm btn-warning" asp-area="" asp-page="/EditarMateria" asp-route-id="@item.Id">Editar</a>
+            
+                <a class="btn btn-sm btn-danger" asp-area="" asp-page="/EliminarMateria" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
